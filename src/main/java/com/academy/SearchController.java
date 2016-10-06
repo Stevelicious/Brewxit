@@ -2,12 +2,15 @@ package com.academy;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class SearchController {
 
-    @RequestMapping("search")
-    public String Search() {
+    @RequestMapping(value = "search", method = RequestMethod.GET)
+    public String search() {
+        ModelAndView search = new ModelAndView("index");
+
         return "/";
     }
 }
