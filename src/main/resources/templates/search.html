@@ -1,12 +1,18 @@
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>Welcome!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
-    <link href="assets/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+
+    <link href="assets/css/custom.css" rel="stylesheet" media="screen" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}" />
+
+    <script src="assets/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="assets/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="assets/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <script src="https://use.typekit.net/upm0vmm.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -55,17 +61,29 @@
                 <div class="form-group">
 
                     <div class="col-sm-4">
-                        <input type="text" class="form-control input-lg" id="inputCity" placeholder="Vart åker du ifrån?">
-                    </div> <div class="form-group">
-
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control input-lg" id="inputCity" placeholder="Vart ska du åka?">
+                        <input type="text" class="form-control input-lg" id="from" placeholder="Vart åker du ifrån?" />
                     </div>
-                </div>
+                    <div class="form-group">
+
+                        <div id="custom-search-input">
+                            <div class="input-group col-sm-4">
+                                <input type="text" class="form-control input-lg" id="to" placeholder="Vart ska du åka?" />
+                                <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+</div>
+
             </form>
+            </div>
         </div>
     </div>
-</div>
+
+
 
 </body>
 </html>
