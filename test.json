@@ -8,147 +8,6 @@
     "LegList":{
       "Leg":{
         "idx":"0",
-        "name":"tunnelbanans gröna linje 17",
-        "type":"METRO",
-        "dir":"Odenplan",
-        "line":"17",
-        "Origin":{
-          "name":"Slussen",
-          "type":"ST",
-          "id":"400101011",
-          "lon":"18.071743",
-          "lat":"59.319591",
-          "routeIdx":"9",
-          "time":"21:16",
-          "date":"2016-10-05"
-          },
-        "Destination":{
-          "name":"T-Centralen",
-          "type":"ST",
-          "id":"400102051",
-          "lon":"18.061639",
-          "lat":"59.331295",
-          "routeIdx":"11",
-          "time":"21:20",
-          "date":"2016-10-05"
-          },
-        "JourneyDetailRef":{
-          "ref":"ref%3D361866%2F125178%2F204230%2F18507%2F74%3Fdate%3D2016-10-05%26station_evaId%3D400101011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
-          },
-        "GeometryRef":{
-          "ref":"ref%3D361866%2F125178%2F204230%2F18507%2F74%26startIdx%3D9%26endIdx%3D11%26lang%3Dsv%26format%3Djson%26"
-          }
-        }
-      },
-    "PriceInfo":{
-      "TariffZones":{
-        "$":"A"
-        },
-      "TariffRemark":{
-        "$":"2 biljett"
-        }
-      }
-    },{
-    "dur":"4",
-    "chg":"0",
-    "co2":"0.00",
-    "LegList":{
-      "Leg":{
-        "idx":"0",
-        "name":"tunnelbanans röda linje 14",
-        "type":"METRO",
-        "dir":"Mörby centrum",
-        "line":"14",
-        "Origin":{
-          "name":"Slussen",
-          "type":"ST",
-          "id":"400102011",
-          "lon":"18.071491",
-          "lat":"59.319511",
-          "routeIdx":"9",
-          "time":"21:18",
-          "date":"2016-10-05"
-          },
-        "Destination":{
-          "name":"T-Centralen",
-          "type":"ST",
-          "id":"400101051",
-          "lon":"18.061486",
-          "lat":"59.331358",
-          "routeIdx":"11",
-          "time":"21:22",
-          "date":"2016-10-05"
-          },
-        "JourneyDetailRef":{
-          "ref":"ref%3D238263%2F83540%2F622002%2F231581%2F74%3Fdate%3D2016-10-05%26station_evaId%3D400102011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
-          },
-        "GeometryRef":{
-          "ref":"ref%3D238263%2F83540%2F622002%2F231581%2F74%26startIdx%3D9%26endIdx%3D11%26lang%3Dsv%26format%3Djson%26"
-          }
-        }
-      },
-    "PriceInfo":{
-      "TariffZones":{
-        "$":"A"
-        },
-      "TariffRemark":{
-        "$":"2 biljett"
-        }
-      }
-    },{
-    "dur":"4",
-    "chg":"0",
-    "co2":"0.00",
-    "LegList":{
-      "Leg":{
-        "idx":"0",
-        "name":"tunnelbanans gröna linje 18",
-        "type":"METRO",
-        "dir":"Alvik",
-        "line":"18",
-        "Origin":{
-          "name":"Slussen",
-          "type":"ST",
-          "id":"400101011",
-          "lon":"18.071743",
-          "lat":"59.319591",
-          "routeIdx":"12",
-          "time":"21:20",
-          "date":"2016-10-05"
-          },
-        "Destination":{
-          "name":"T-Centralen",
-          "type":"ST",
-          "id":"400102051",
-          "lon":"18.061639",
-          "lat":"59.331295",
-          "routeIdx":"14",
-          "time":"21:24",
-          "date":"2016-10-05"
-          },
-        "JourneyDetailRef":{
-          "ref":"ref%3D783402%2F266119%2F922816%2F200274%2F74%3Fdate%3D2016-10-05%26station_evaId%3D400101011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
-          },
-        "GeometryRef":{
-          "ref":"ref%3D783402%2F266119%2F922816%2F200274%2F74%26startIdx%3D12%26endIdx%3D14%26lang%3Dsv%26format%3Djson%26"
-          }
-        }
-      },
-    "PriceInfo":{
-      "TariffZones":{
-        "$":"A"
-        },
-      "TariffRemark":{
-        "$":"2 biljett"
-        }
-      }
-    },{
-    "dur":"3",
-    "chg":"0",
-    "co2":"0.00",
-    "LegList":{
-      "Leg":{
-        "idx":"0",
         "name":"tunnelbanans röda linje 13",
         "type":"METRO",
         "dir":"Ropsten",
@@ -160,8 +19,8 @@
           "lon":"18.071491",
           "lat":"59.319511",
           "routeIdx":"18",
-          "time":"21:23",
-          "date":"2016-10-05"
+          "time":"14:11",
+          "date":"2016-10-06"
           },
         "Destination":{
           "name":"T-Centralen",
@@ -170,14 +29,14 @@
           "lon":"18.061486",
           "lat":"59.331358",
           "routeIdx":"20",
-          "time":"21:26",
-          "date":"2016-10-05"
+          "time":"14:15",
+          "date":"2016-10-06"
           },
         "JourneyDetailRef":{
-          "ref":"ref%3D687561%2F232524%2F254936%2F101719%2F74%3Fdate%3D2016-10-05%26station_evaId%3D400102011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+          "ref":"ref%3D639681%2F216569%2F219982%2F103239%2F74%3Fdate%3D2016-10-06%26station_evaId%3D400102011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
           },
         "GeometryRef":{
-          "ref":"ref%3D687561%2F232524%2F254936%2F101719%2F74%26startIdx%3D18%26endIdx%3D20%26lang%3Dsv%26format%3Djson%26"
+          "ref":"ref%3D639681%2F216569%2F219982%2F103239%2F74%26startIdx%3D18%26endIdx%3D20%26lang%3Dsv%26format%3Djson%26"
           }
         }
       },
@@ -207,8 +66,8 @@
           "lon":"18.071743",
           "lat":"59.319591",
           "routeIdx":"12",
-          "time":"21:25",
-          "date":"2016-10-05"
+          "time":"14:12",
+          "date":"2016-10-06"
           },
         "Destination":{
           "name":"T-Centralen",
@@ -217,14 +76,155 @@
           "lon":"18.061639",
           "lat":"59.331295",
           "routeIdx":"14",
-          "time":"21:29",
-          "date":"2016-10-05"
+          "time":"14:16",
+          "date":"2016-10-06"
           },
         "JourneyDetailRef":{
-          "ref":"ref%3D292707%2F103065%2F88880%2F53129%2F74%3Fdate%3D2016-10-05%26station_evaId%3D400101011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+          "ref":"ref%3D736842%2F251159%2F666404%2F87598%2F74%3Fdate%3D2016-10-06%26station_evaId%3D400101011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
           },
         "GeometryRef":{
-          "ref":"ref%3D292707%2F103065%2F88880%2F53129%2F74%26startIdx%3D12%26endIdx%3D14%26lang%3Dsv%26format%3Djson%26"
+          "ref":"ref%3D736842%2F251159%2F666404%2F87598%2F74%26startIdx%3D12%26endIdx%3D14%26lang%3Dsv%26format%3Djson%26"
+          }
+        }
+      },
+    "PriceInfo":{
+      "TariffZones":{
+        "$":"A"
+        },
+      "TariffRemark":{
+        "$":"2 biljett"
+        }
+      }
+    },{
+    "dur":"4",
+    "chg":"0",
+    "co2":"0.00",
+    "LegList":{
+      "Leg":{
+        "idx":"0",
+        "name":"tunnelbanans röda linje 14",
+        "type":"METRO",
+        "dir":"Mörby centrum",
+        "line":"14",
+        "Origin":{
+          "name":"Slussen",
+          "type":"ST",
+          "id":"400102011",
+          "lon":"18.071491",
+          "lat":"59.319511",
+          "routeIdx":"9",
+          "time":"14:14",
+          "date":"2016-10-06"
+          },
+        "Destination":{
+          "name":"T-Centralen",
+          "type":"ST",
+          "id":"400101051",
+          "lon":"18.061486",
+          "lat":"59.331358",
+          "routeIdx":"11",
+          "time":"14:18",
+          "date":"2016-10-06"
+          },
+        "JourneyDetailRef":{
+          "ref":"ref%3D931584%2F314644%2F254036%2F183514%2F74%3Fdate%3D2016-10-06%26station_evaId%3D400102011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+          },
+        "GeometryRef":{
+          "ref":"ref%3D931584%2F314644%2F254036%2F183514%2F74%26startIdx%3D9%26endIdx%3D11%26lang%3Dsv%26format%3Djson%26"
+          }
+        }
+      },
+    "PriceInfo":{
+      "TariffZones":{
+        "$":"A"
+        },
+      "TariffRemark":{
+        "$":"2 biljett"
+        }
+      }
+    },{
+    "dur":"4",
+    "chg":"0",
+    "co2":"0.00",
+    "LegList":{
+      "Leg":{
+        "idx":"0",
+        "name":"tunnelbanans gröna linje 17",
+        "type":"METRO",
+        "dir":"Åkeshov",
+        "line":"17",
+        "Origin":{
+          "name":"Slussen",
+          "type":"ST",
+          "id":"400101011",
+          "lon":"18.071743",
+          "lat":"59.319591",
+          "routeIdx":"9",
+          "time":"14:16",
+          "date":"2016-10-06"
+          },
+        "Destination":{
+          "name":"T-Centralen",
+          "type":"ST",
+          "id":"400102051",
+          "lon":"18.061639",
+          "lat":"59.331295",
+          "routeIdx":"11",
+          "time":"14:20",
+          "date":"2016-10-06"
+          },
+        "JourneyDetailRef":{
+          "ref":"ref%3D202584%2F72146%2F993428%2F429189%2F74%3Fdate%3D2016-10-06%26station_evaId%3D400101011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+          },
+        "GeometryRef":{
+          "ref":"ref%3D202584%2F72146%2F993428%2F429189%2F74%26startIdx%3D9%26endIdx%3D11%26lang%3Dsv%26format%3Djson%26"
+          }
+        }
+      },
+    "PriceInfo":{
+      "TariffZones":{
+        "$":"A"
+        },
+      "TariffRemark":{
+        "$":"2 biljett"
+        }
+      }
+    },{
+    "dur":"4",
+    "chg":"0",
+    "co2":"0.00",
+    "LegList":{
+      "Leg":{
+        "idx":"0",
+        "name":"tunnelbanans röda linje 14",
+        "type":"METRO",
+        "dir":"Mörby centrum",
+        "line":"14",
+        "Origin":{
+          "name":"Slussen",
+          "type":"ST",
+          "id":"400102011",
+          "lon":"18.071491",
+          "lat":"59.319511",
+          "routeIdx":"4",
+          "time":"14:18",
+          "date":"2016-10-06"
+          },
+        "Destination":{
+          "name":"T-Centralen",
+          "type":"ST",
+          "id":"400101051",
+          "lon":"18.061486",
+          "lat":"59.331358",
+          "routeIdx":"6",
+          "time":"14:22",
+          "date":"2016-10-06"
+          },
+        "JourneyDetailRef":{
+          "ref":"ref%3D312783%2F108368%2F902018%2F346750%2F74%3Fdate%3D2016-10-06%26station_evaId%3D400102011%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+          },
+        "GeometryRef":{
+          "ref":"ref%3D312783%2F108368%2F902018%2F346750%2F74%26startIdx%3D4%26endIdx%3D6%26lang%3Dsv%26format%3Djson%26"
           }
         }
       },

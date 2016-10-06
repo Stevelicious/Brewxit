@@ -1,10 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="assets/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="assets/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
 </head>
 <body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">BREWXIT.</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Start</a></li>
+                <li><a href="#">KONTAKT</a></li>
+
+                <li><a href="#">OM</a></li>
+
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+<!--/.nav-collapse -->
+
+
+<!--/.content-middle -->
+<div class="headwrap">
+
+
+    <div class="container">
+        <div class="row"><!--
+      <div class="main-text">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1 >Jobbat över?</h1>
+					<h2>Lugn, du hinner</h2>
+        </div>
+				</div>
+   </div> -->
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control input-lg" id="inputCity" placeholder="Vart åker du ifrån?">
+                    </div> <div class="form-group">
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control input-lg" id="inputCity" placeholder="Vart ska du åka?">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
