@@ -10,9 +10,6 @@
     <li th:each="butik : ${searchResult}">
         <a th:text="${butik.name}" />
         <a th:text="${butik.address}" />
-        <!--<a th:text="${butik.city}" />-->
-        <!--<a th:text="${butik.pointxtest}" />-->
-        <!--<a th:text="${butik.pointytest}" />-->
         <a th:text="${butik.distance}" />
     </li>
 </ul>
