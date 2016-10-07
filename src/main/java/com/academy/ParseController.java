@@ -28,8 +28,9 @@ public class ParseController {
     @PostMapping("/testresult")
     public ModelAndView showResult(@RequestParam String a, String b) {
         Reseplan reseplan = reseplanerare_api.search(a, b);
+        System.out.println(reseplan.destination.lon);
         Parser parser = new Parser();
-        searchResult = parser.getButiks(reseplan.destination.lon, reseplan.destination.lat);
+        searchResult = parser.getButiks(reseplan.destination.lat, reseplan.destination.lon);
 //        parser.printButiks();
         if(searchResult.size() == 0) {
             return new ModelAndView("notfound");

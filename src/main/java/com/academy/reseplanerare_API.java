@@ -22,12 +22,14 @@ public class reseplanerare_API {
 			);
 			String json = getJSONString(url);
 			Station start = parseStation(json);
+			System.out.println(start.name);
 			
 			url = new URL(
 					String.format("http://api.sl.se/api2/typeahead.json?key=54f8669daa794e5fb749396bd0763e82&searchstring=%s&stationsonly=true&maxresults=1", dest)
 			);
 			json = getJSONString(url);
 			Station destination = parseStation(json);
+			System.out.println(destination.name);
 			
 			return fetchTravelPlan(start.siteId, destination.siteId);
 			
@@ -54,6 +56,7 @@ public class reseplanerare_API {
 			);
 			
 			String json = getJSONString(url);
+			System.out.println(json);
 			
 			return parseReseplan(json);
 			
@@ -79,7 +82,7 @@ public class reseplanerare_API {
 		in.close();
 		return sb.toString();
 	}
-	
+
 	private Reseplan parseReseplan(String s) {
 		Gson gson = new Gson();
 		
@@ -93,12 +96,12 @@ public class reseplanerare_API {
 		
 		
 		JsonObject legList = trip.getAsJsonObject("LegList");
-		JsonObject leg = legList.getAsJsonObject("Leg");
-		JsonObject journeyDetailRef = leg.getAsJsonObject("JourneyDetailRef");
-		rp.journeyDetailRef = journeyDetailRef.getAsJsonPrimitive("ref").getAsString();
+		JsonArray leg = legList.getAsJsonArray("Leg");
+		JsonObject journeyDetailRef = (JsonObject) leg.get(2);
+//		rp.journeyDetailRef = journeyDetailRef.getAsJsonPrimitive("ref").getAsString();
 		
 		//get origin info
-		JsonObject origin = leg.getAsJsonObject("Origin");
+		JsonObject origin = journeyDetailRef.getAsJsonObject("Origin");
 		rp.origin.Id = origin.getAsJsonPrimitive("routeIdx").getAsInt();
 		rp.origin.station = origin.getAsJsonPrimitive("name").getAsString();
 		rp.origin.lon = origin.getAsJsonPrimitive("lon").getAsDouble();
@@ -107,7 +110,7 @@ public class reseplanerare_API {
 		rp.origin.dateTime = LocalDateTime.parse(date);
 		
 		//get destination info
-		JsonObject destination = leg.getAsJsonObject("Destination");
+		JsonObject destination = journeyDetailRef.getAsJsonObject("Destination");
 		rp.destination.Id = destination.getAsJsonPrimitive("routeIdx").getAsInt();
 		rp.destination.station = destination.getAsJsonPrimitive("name").getAsString();
 		rp.destination.lon = destination.getAsJsonPrimitive("lon").getAsDouble();
