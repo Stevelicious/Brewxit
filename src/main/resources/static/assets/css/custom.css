@@ -1,0 +1,27 @@
+
+.headwrap {
+
+    position: fixed;
+    top: 50%;
+    left: 30%;
+
+}
+.input-group.input-group-unstyled input.form-control {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.input-group-unstyled .input-group-addon {
+    border-radius: 4px;
+    border: 0px;
+    background-color: transparent;
+}
+
+body {
+    margin: 0;
+    background: url("https://raw.githubusercontent.com/Stevelicious/Brewxit/master/src/assets/img/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
