@@ -1,5 +1,9 @@
 package com.academy;
 
+/**
+ * Created by clockmice
+ */
+
 public class Location {
     private double longitude;
     private double latitude;

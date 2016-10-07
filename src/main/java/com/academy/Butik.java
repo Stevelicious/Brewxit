@@ -7,6 +7,10 @@ import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * Created by clockmice
+ */
+
 public class Butik {
     private String name;
     private String address;

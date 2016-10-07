@@ -1,5 +1,9 @@
 package com.academy;
 
+/**
+ * Created by clockmice
+ */
+
 public class Point {
     private double coordinateX;
     private double coordinateY;

@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Created by clockmice
+ */
+
 public class Parser {
     // write your code here
     List<Butik> systembolaget = new ArrayList<>();
