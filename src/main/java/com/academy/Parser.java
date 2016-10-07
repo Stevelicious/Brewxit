@@ -79,11 +79,11 @@ public class Parser {
         }
     }
 
-    public List<Butik> getButiks(double lon, double lat) {
+    public List<Butik> getButiks(double lat, double lon) {
         List<Butik> butiks = new ArrayList<>();
         Iterator<Butik> butikIterator = systembolaget.iterator();
         while (butikIterator.hasNext()) {
-            Point point = new Point(lon, lat);
+            Point point = new Point(lat, lon);
             Butik butik = butikIterator.next();
             double distance = distanceBetween(point, butik);
             if (distance <= 2.0) {

@@ -15,7 +15,8 @@ import java.util.List;
 @Controller
 public class ParseController {
 
-    private List<Butik> searchResult;
+    private List<Butik> originStores;
+    private List<Butik> destinationStores;
 
     public reseplanerare_API reseplanerare_api = new reseplanerare_API();
 
@@ -28,15 +29,18 @@ public class ParseController {
     @PostMapping("/testresult")
     public ModelAndView showResult(@RequestParam String a, String b) {
         Reseplan reseplan = reseplanerare_api.search(a, b);
-        System.out.println(reseplan.destination.lon);
+        System.out.println(reseplan.origin.lat);
+        System.out.println(reseplan.origin.lon);
         Parser parser = new Parser();
-        searchResult = parser.getButiks(reseplan.destination.lat, reseplan.destination.lon);
+        originStores = parser.getButiks(reseplan.origin.lat, reseplan.origin.lon);
+        destinationStores = parser.getButiks(reseplan.destination.lat, reseplan.destination.lon);
 //        parser.printButiks();
-        if(searchResult.size() == 0) {
+        if((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
         }
         return new ModelAndView("testresult")
-                .addObject("searchResult", searchResult);
+                .addObject("originStores", originStores)
+                .addObject("destinationStores", destinationStores);
     }
 
 
