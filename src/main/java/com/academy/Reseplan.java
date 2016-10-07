@@ -14,11 +14,11 @@ public class Reseplan {
 	String journeyDetailRef;
 	
 	public Point getOrigin(){
-		return new Point(trips.get(0).origin.lon, trips.get(0).origin.lat);
+		return new Point(trips.get(0).origin.lat, trips.get(0).origin.lon);
 
 	}
 	public Point getDestination(){
-		return new Point(trips.get(trips.size()).origin.lon, trips.get(trips.size()).origin.lat);
+		return new Point(trips.get(trips.size()-1).origin.lat, trips.get(trips.size()-1).origin.lon);
 	}
 }
 
