@@ -19,13 +19,13 @@ public class ParseController {
 
     public reseplanerare_API reseplanerare_api = new reseplanerare_API();
 
-    @GetMapping("/searchcoord")
+    @GetMapping("/testsearch")
     public ModelAndView search() {
-        return new ModelAndView("searchcoord")
+        return new ModelAndView("testsearch")
                 .addObject("");
     }
 
-    @PostMapping("/result")
+    @PostMapping("/testresult")
     public ModelAndView showResult(@RequestParam String a, String b) {
         Reseplan reseplan = reseplanerare_api.search(a, b);
         Parser parser = new Parser();
@@ -34,7 +34,7 @@ public class ParseController {
         if(searchResult.size() == 0) {
             return new ModelAndView("notfound");
         }
-        return new ModelAndView("result")
+        return new ModelAndView("testresult")
                 .addObject("searchResult", searchResult);
     }
 
