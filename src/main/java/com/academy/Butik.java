@@ -11,7 +11,7 @@ public class Butik {
     private String name;
     private String address;
     private String city;
-    private com.example.Point point;
+    private Point point;
     private String pointxtest;
     private String pointytest;
     private String distance;
