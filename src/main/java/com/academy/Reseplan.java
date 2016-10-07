@@ -1,21 +1,40 @@
 package com.academy;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Steven Hu on 2016-10-06.
  */
 public class Reseplan {
 	int duration;
-	Place origin = new Place();
-	Place destination = new Place();
+	
+	List<Trip> trips = new ArrayList<>();
 	String journeyDetailRef;
 	
-	public class Place {
-		long Id;
-		String station;
-		double lon, lat;
-		LocalDateTime dateTime;
-		
+	public Point getOrigin(){
+		return new Point(trips.get(0).origin.lon, trips.get(0).origin.lat);
 	}
+	public Point getDestination(){
+		return new Point(trips.get(trips.size()).origin.lon, trips.get(trips.size()).origin.lat);
+	}
+}
+
+class Trip {
+	Place origin = new Place();
+	Place destination = new Place();
+}
+
+class Place {
+	String name;
+	String type;
+	int id;
+	double lon;
+	double lat;
+	int routeIdx;
+	String time;
+	String date;
+	
+	
 }

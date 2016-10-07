@@ -8,9 +8,9 @@ public class BrewxitApplication {
 
 	public static void main(String[] args) {
 		reseplanerare_API reseplanerareAPI = new reseplanerare_API();
-		Reseplan rp =  reseplanerareAPI.search("slussen", "liljeholmen");
-		System.out.println(rp.origin.station);
-		System.out.println(rp.destination.station);
+		Reseplan rp =  reseplanerareAPI.search("Globen", "Täby");
+//		System.out.println(rp.getOrigin());
+//		System.out.println(rp.getDestination());
 		System.out.println("Done");
 		
 		
