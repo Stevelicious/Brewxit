@@ -8,27 +8,39 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+/**
+ * Created by clockmice
+ */
+
 @Controller
 public class ParseController {
 
-    private List<Butik> searchResult;
+    private List<Butik> originStores;
+    private List<Butik> destinationStores;
 
-    @GetMapping("/")
+    public reseplanerare_API reseplanerare_api = new reseplanerare_API();
+
+    @GetMapping("/testsearch")
     public ModelAndView search() {
-        return new ModelAndView("searchcoord")
+        return new ModelAndView("testsearch")
                 .addObject("");
     }
 
-    @PostMapping("/result")
-    public ModelAndView showResult(@RequestParam String keywordx, String keywordy) {
+    @PostMapping("/testresult")
+    public ModelAndView showResult(@RequestParam String a, String b) {
+        Reseplan reseplan = reseplanerare_api.search(a, b);
+        System.out.println(reseplan.origin.lat);
+        System.out.println(reseplan.origin.lon);
         Parser parser = new Parser();
-        searchResult = parser.getButiks(keywordx, keywordy);
+        originStores = parser.getButiks(reseplan.origin.lat, reseplan.origin.lon);
+        destinationStores = parser.getButiks(reseplan.destination.lat, reseplan.destination.lon);
 //        parser.printButiks();
-        if(searchResult.size() == 0) {
+        if((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
         }
-        return new ModelAndView("result")
-                .addObject("searchResult", searchResult);
+        return new ModelAndView("testresult")
+                .addObject("originStores", originStores)
+                .addObject("destinationStores", destinationStores);
     }
 
 

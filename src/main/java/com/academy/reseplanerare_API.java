@@ -22,12 +22,14 @@ public class reseplanerare_API {
 			);
 			String json = getJSONString(url);
 			Station start = parseStation(json);
+			System.out.println(start.name);
 			
 			url = new URL(
 					String.format("http://api.sl.se/api2/typeahead.json?key=54f8669daa794e5fb749396bd0763e82&searchstring=%s&stationsonly=true&maxresults=1", dest)
 			);
 			json = getJSONString(url);
 			Station destination = parseStation(json);
+			System.out.println(destination.name);
 			
 			return fetchTravelPlan(start.siteId, destination.siteId);
 			
@@ -54,6 +56,7 @@ public class reseplanerare_API {
 			);
 			
 			String json = getJSONString(url);
+			System.out.println(json);
 			
 			return parseReseplan(json);
 			
@@ -79,7 +82,7 @@ public class reseplanerare_API {
 		in.close();
 		return sb.toString();
 	}
-	
+
 	private Reseplan parseReseplan(String s) {
 		Gson gson = new Gson();
 		
@@ -94,6 +97,7 @@ public class reseplanerare_API {
 		
 		
 		JsonObject legList = trip.getAsJsonObject("LegList");
+
 
 		int j=0;
 		Trip legTrip;
@@ -112,7 +116,6 @@ public class reseplanerare_API {
 			}
 			
 		}
-		
 		return rp;
 		
 	}

@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Created by clockmice
+ */
+
 public class Parser {
     // write your code here
     List<Butik> systembolaget = new ArrayList<>();
@@ -53,6 +57,7 @@ public class Parser {
                         butik.setName(eElement.getElementsByTagName("Namn").item(0).getTextContent());
                         butik.setCity(eElement.getElementsByTagName("Address4").item(0).getTextContent().toLowerCase());
                         butik.setAddress(eElement.getElementsByTagName("Address1").item(0).getTextContent());
+                        butik.setTelefon(eElement.getElementsByTagName("Telefon").item(0).getTextContent());
                         butik.setPoint(Double.parseDouble(eElement.getElementsByTagName("RT90x").item(0).getTextContent()),
                                 Double.parseDouble(eElement.getElementsByTagName("RT90y").item(0).getTextContent()));
                         systembolaget.add(butik);
@@ -74,11 +79,11 @@ public class Parser {
         }
     }
 
-    public List<Butik> getButiks(String keywordx, String keywordy) {
+    public List<Butik> getButiks(double lat, double lon) {
         List<Butik> butiks = new ArrayList<>();
         Iterator<Butik> butikIterator = systembolaget.iterator();
         while (butikIterator.hasNext()) {
-            Point point = new Point(Double.parseDouble(keywordx), Double.parseDouble(keywordy));
+            Point point = new Point(lat, lon);
             Butik butik = butikIterator.next();
             double distance = distanceBetween(point, butik);
             if (distance <= 2.0) {

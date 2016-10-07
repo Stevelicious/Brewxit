@@ -15,6 +15,7 @@ public class Reseplan {
 	
 	public Point getOrigin(){
 		return new Point(trips.get(0).origin.lon, trips.get(0).origin.lat);
+
 	}
 	public Point getDestination(){
 		return new Point(trips.get(trips.size()).origin.lon, trips.get(trips.size()).origin.lat);
