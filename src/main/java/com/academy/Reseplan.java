@@ -16,6 +16,5 @@ public class Reseplan {
 		String station;
 		double lon, lat;
 		LocalDateTime dateTime;
-		
 	}
 }

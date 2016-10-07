@@ -17,6 +17,15 @@ public class Butik {
     private String city;
     private Point point;
     private String distance;
+    private String telefon;
+
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
 
     public String getDistance() {
         return distance;
