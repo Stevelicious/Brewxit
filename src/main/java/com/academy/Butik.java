@@ -1,6 +1,6 @@
 package com.academy;
 
-import com.example.*;import com.example.Point;import com.github.goober.coordinatetransformation.positions.RT90Position;
+import com.github.goober.coordinatetransformation.positions.RT90Position;
 import com.github.goober.coordinatetransformation.positions.WGS84Position;
 
 import java.awt.*;
@@ -12,8 +12,6 @@ public class Butik {
     private String address;
     private String city;
     private Point point;
-    private String pointxtest;
-    private String pointytest;
     private String distance;
 
     public String getDistance() {
@@ -25,16 +23,6 @@ public class Butik {
         bd = bd.setScale(1, RoundingMode.HALF_UP);
         String s = String.valueOf(bd.doubleValue()) + " km away.";
         this.distance = s;
-    }
-
-    public String getPointxtest() {
-        String out = "" + point.getCoordinateX();
-        return out;
-    }
-
-    public String getPointytest() {
-        String out = "" + point.getCoordinateY();
-        return out;
     }
 
     public Point getPoint() {
