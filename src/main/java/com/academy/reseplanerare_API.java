@@ -84,7 +84,9 @@ public class reseplanerare_API {
 		return sb.toString();
 	}
 
+
 //b8c67b5e9ab0678e38eb1e82138f39524466f341
+
 	private Reseplan parseReseplan(String s) {
 		Gson gson = new Gson();
 		
