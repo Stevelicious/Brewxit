@@ -15,27 +15,30 @@ import java.util.List;
 @Controller
 public class ParseController {
 
-    private List<Butik> searchResult;
+    private List<Butik> originStores;
+    private List<Butik> destinationStores;
 
     public reseplanerare_API reseplanerare_api = new reseplanerare_API();
 
-    @GetMapping("/searchcoord")
+    @GetMapping("/testsearch")
     public ModelAndView search() {
-        return new ModelAndView("searchcoord")
+        return new ModelAndView("testsearch")
                 .addObject("");
     }
 
-    @PostMapping("/result")
+    @PostMapping("/testresult")
     public ModelAndView showResult(@RequestParam String a, String b) {
         Reseplan reseplan = reseplanerare_api.search(a, b);
         Parser parser = new Parser();
-        searchResult = parser.getButiks(reseplan.destination.lon, reseplan.destination.lat);
+        originStores = parser.getButiks(reseplan.getOrigin());
+        destinationStores = parser.getButiks(reseplan.getDestination());
 //        parser.printButiks();
-        if(searchResult.size() == 0) {
+        if((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
         }
-        return new ModelAndView("result")
-                .addObject("searchResult", searchResult);
+        return new ModelAndView("testresult")
+                .addObject("originStores", originStores)
+                .addObject("destinationStores", destinationStores);
     }
 
 

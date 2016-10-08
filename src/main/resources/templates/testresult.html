@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Result</title>
+</head>
+<body>
+<h3>Systembolaget stores near origin:</h3>
+<ul style="list-style: none;">
+    <li th:each="butik1 : ${originStores}">
+        <a th:text="${butik1.name}" />
+        <a th:text="${butik1.address}" />
+        <a th:text="${butik1.distance}" />
+    </li>
+</ul>
+
+<h3>Systembolaget stores near destination:</h3>
+<ul style="list-style: none;">
+    <li th:each="butik2 : ${destinationStores}">
+        <a th:text="${butik2.name}" />
+        <a th:text="${butik2.address}" />
+        <a th:text="${butik2.distance}" />
+    </li>
+</ul>
+
+<a href="/testsearch">Make a new search</a>
+
+</body>
+</html>

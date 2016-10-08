@@ -22,12 +22,14 @@ public class reseplanerare_API {
 			);
 			String json = getJSONString(url);
 			Station start = parseStation(json);
+			System.out.println(start.name);
 			
 			url = new URL(
 					String.format("http://api.sl.se/api2/typeahead.json?key=54f8669daa794e5fb749396bd0763e82&searchstring=%s&stationsonly=true&maxresults=1", dest)
 			);
 			json = getJSONString(url);
 			Station destination = parseStation(json);
+			System.out.println(destination.name);
 			
 			return fetchTravelPlan(start.siteId, destination.siteId);
 			
@@ -54,6 +56,7 @@ public class reseplanerare_API {
 			);
 			
 			String json = getJSONString(url);
+			System.out.println(json);
 			
 			return parseReseplan(json);
 			
@@ -81,8 +84,7 @@ public class reseplanerare_API {
 		return sb.toString();
 	}
 
-
-	
+//b8c67b5e9ab0678e38eb1e82138f39524466f341
 	private Reseplan parseReseplan(String s) {
 		Gson gson = new Gson();
 		
@@ -90,34 +92,32 @@ public class reseplanerare_API {
 		
 		// Convert JSON to Java Object
 		JsonObject json = gson.fromJson(s, JsonObject.class);
+		System.out.println(json.toString());
 		JsonObject tripList = json.getAsJsonObject("TripList");
 		JsonObject trip = tripList.getAsJsonObject("Trip");
 		rp.duration = trip.getAsJsonPrimitive("dur").getAsInt();
 		
 		
 		JsonObject legList = trip.getAsJsonObject("LegList");
-		JsonObject leg = legList.getAsJsonObject("Leg");
-		JsonObject journeyDetailRef = leg.getAsJsonObject("JourneyDetailRef");
-		rp.journeyDetailRef = journeyDetailRef.getAsJsonPrimitive("ref").getAsString();
-		
-		//get origin info
-		JsonObject origin = leg.getAsJsonObject("Origin");
-		rp.origin.Id = origin.getAsJsonPrimitive("routeIdx").getAsInt();
-		rp.origin.station = origin.getAsJsonPrimitive("name").getAsString();
-		rp.origin.lon = origin.getAsJsonPrimitive("lon").getAsDouble();
-		rp.origin.lat = origin.getAsJsonPrimitive("lat").getAsDouble();
-		String date = origin.getAsJsonPrimitive("date").getAsString() + "T" + origin.getAsJsonPrimitive("time").getAsString();
-		rp.origin.dateTime = LocalDateTime.parse(date);
-		
-		//get destination info
-		JsonObject destination = leg.getAsJsonObject("Destination");
-		rp.destination.Id = destination.getAsJsonPrimitive("routeIdx").getAsInt();
-		rp.destination.station = destination.getAsJsonPrimitive("name").getAsString();
-		rp.destination.lon = destination.getAsJsonPrimitive("lon").getAsDouble();
-		rp.destination.lat = destination.getAsJsonPrimitive("lat").getAsDouble();
-		date = destination.getAsJsonPrimitive("date").getAsString() + "T" + destination.getAsJsonPrimitive("time").getAsString();
-		rp.destination.dateTime = LocalDateTime.parse(date);
-		
+
+
+		int j=0;
+		Trip legTrip;
+		for (int i = 0; i < legList.getAsJsonArray("Leg").size(); i++) {
+			JsonObject leg = legList.getAsJsonArray("Leg").get(i).getAsJsonObject();
+			
+			if (leg.getAsJsonPrimitive("hide") == null){
+				JsonObject journeyDetailRef = leg.getAsJsonObject("JourneyDetailRef");
+				rp.journeyDetailRef = journeyDetailRef.getAsJsonPrimitive("ref").getAsString();
+				
+				legTrip = new Trip();
+				legTrip.origin = gson.fromJson(leg.get("Origin"),Place.class);
+				legTrip.destination = gson.fromJson(leg.get("Destination"),Place.class);
+				rp.trips.add(legTrip);
+				
+			}
+			
+		}
 		return rp;
 		
 	}
