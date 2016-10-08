@@ -77,8 +77,11 @@ public class reseplanerare_API {
 			sb.append(inputLine);
 		}
 		in.close();
+		System.out.println(sb);
 		return sb.toString();
 	}
+
+
 	
 	private Reseplan parseReseplan(String s) {
 		Gson gson = new Gson();
