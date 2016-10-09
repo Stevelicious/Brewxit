@@ -1,13 +1,7 @@
-html body .navbar .navbar-inner .container {}
-
 body {
     margin: 0;
     background: url("https://raw.githubusercontent.com/Stevelicious/Brewxit/master/src/main/resources/static/assets/img/bg.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-
 }
 
 .headwrap {
@@ -17,8 +11,6 @@ body {
 }
 
 .input-group.input-group-unstyled input.form-control {
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;
 }
 
@@ -33,9 +25,9 @@ body {
     font-family: "bebas-neue", sans-serif;
     font-style: normal;
     font-weight: 400;
-
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: black; /*Change active text color here*/
+    color: black;
+    /*Change active text color here*/
 }
