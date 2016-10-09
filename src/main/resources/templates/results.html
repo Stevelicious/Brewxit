@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <meta charset="UTF-8"/>
     <title>Result</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
 <h3>Systembolaget stores near origin:</h3>
+
+<div id="sidebar">
 <ul style="list-style: none;">
     <li th:each="butik1 : ${originStores}">
         <a th:text="${butik1.name}" />
@@ -22,8 +27,13 @@
         <a th:text="${butik2.distance}" />
     </li>
 </ul>
+</div>
 
-<a href="/testsearch">Make a new search</a>
+<div id="map"></div>
 
+<a href="/search">Make a new search</a>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC4QG-_Gyb7HbXOAas2EzdFLOF8q2pF43A"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

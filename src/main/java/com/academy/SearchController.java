@@ -1,11 +1,10 @@
 package com.academy;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,9 +25,9 @@ public class SearchController {
     public ModelAndView search() {
         return new ModelAndView("Search")
                 .addObject("");
-    
+    }
 
-    @PostMapping("/results")
+    @RequestMapping(path="travel", method= RequestMethod.POST)
     public ModelAndView showResult(@RequestParam String a, String b) {
         Reseplan reseplan = reseplanerare_api.search(a, b);
         Parser parser = new Parser();
@@ -38,10 +37,11 @@ public class SearchController {
         if((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
         }
-        return new ModelAndView("results")
+        return new ModelAndView("/results")
                 .addObject("originStores", originStores)
                 .addObject("destinationStores", destinationStores);
     }
+
 
 
 }
