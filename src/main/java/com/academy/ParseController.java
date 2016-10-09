@@ -22,7 +22,7 @@ public class ParseController {
 
     @GetMapping("/testsearch")
     public ModelAndView search() {
-        return new ModelAndView("testsearch")
+        return new ModelAndView("results")
                 .addObject("");
     }
 
