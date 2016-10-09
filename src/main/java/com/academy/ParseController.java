@@ -1,3 +1,4 @@
+/*
 package com.academy;
 
 import org.springframework.stereotype.Controller;
@@ -8,9 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+*/
 /**
  * Created by clockmice
- */
+ *//*
+
 
 @Controller
 public class ParseController {
@@ -43,3 +46,4 @@ public class ParseController {
 
 
 }
+*/

@@ -1,19 +1,19 @@
 package com.academy;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
-import java.time.LocalDateTime;
 
 /**
  * Created by Steven Hu on 2016-10-05.
  */
 
-public class reseplanerare_API {
+public class 	reseplanerare_API {
 	
 	public Reseplan search(String origin, String dest){
 		try {
