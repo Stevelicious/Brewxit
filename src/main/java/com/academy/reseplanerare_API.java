@@ -105,12 +105,12 @@ public class reseplanerare_API {
         int j = 0;
         Trip legTrip;
         JsonArray legs = new JsonArray();
-        try {
-        legs.addAll(legList.getAsJsonArray("Leg"));
-        } catch (Exception e) {
-            System.out.println(e);
-            legs.add(legList.getAsJsonObject("Leg"));
-        }
+	    
+	    if(legList.get("Leg").isJsonArray()){
+		    legs.addAll(legList.getAsJsonArray("Leg"));
+	    }else{
+		    legs.add(legList.getAsJsonObject("Leg"));
+	    }
 
         for (int i = 0; i < legs.size(); i++) {
             JsonObject leg = legs.get(i).getAsJsonObject();
