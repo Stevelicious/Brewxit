@@ -5,17 +5,18 @@ import com.github.goober.coordinatetransformation.positions.WGS84Position;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Objects;
 
 /**
  * Created by clockmice
  */
 
-public class Butik {
+public class Butik implements Comparable{
     private String name;
     private String address;
     private String city;
     private Point point;
-    private String distance;
+    private double distance;
     private String telefon;
 
     public String getTelefon() {
@@ -27,14 +28,14 @@ public class Butik {
     }
 
     public String getDistance() {
-        return distance;
+        return String.format("%.2f km away",distance);
     }
 
     public void setDistance(double distance) {
         BigDecimal bd = new BigDecimal(distance);
         bd = bd.setScale(1, RoundingMode.HALF_UP);
         String s = String.valueOf(bd.doubleValue()) + " km away.";
-        this.distance = s;
+        this.distance = distance;
     }
 
     public Point getPoint() {
@@ -71,5 +72,18 @@ public class Butik {
     public void setCity(String city) {
         this.city = city;
     }
-
+    
+    
+    @Override
+    public int compareTo(Object o) {
+        Butik butik = (Butik)o;
+        if (this.distance < butik.distance){
+            return -1;
+        }else if (this.distance > butik.distance){
+            return 1;
+        }else{
+            return 0;
+        }
+        
+    }
 }

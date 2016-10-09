@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -91,6 +92,7 @@ public class Parser {
                 butiks.add(butik);
             }
         }
+        Collections.sort(butiks);
         return butiks;
     }
 

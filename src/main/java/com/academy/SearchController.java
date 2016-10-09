@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -36,6 +37,11 @@ public class SearchController {
         if((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
         }
+        
+        int amountOfStores = 3;
+        originStores = originStores.subList(0,Math.min(originStores.size(),amountOfStores));
+        destinationStores = destinationStores.subList(0,Math.min(destinationStores.size(),amountOfStores));
+        
         return new ModelAndView("results")
                 .addObject("originStores", originStores)
                 .addObject("destinationStores", destinationStores);
