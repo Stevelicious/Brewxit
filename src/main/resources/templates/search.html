@@ -55,13 +55,13 @@
                     <div class="form-group">
 
                         <div class="col-sm-4">
-                            <input name="states" id="from" type="text" placeholder="Vart ifrån ska du åka?" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-lg" />
+                            <input name="a" id="from" type="text" placeholder="Vart ifrån ska du åka?" ng-model="from" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-lg" />
                         </div>
                         <div class="form-group">
 
                             <div id="custom-search-input">
                                 <div class="input-group col-sm-4">
-                                    <input name="states" id="to" type="text" placeholder="Vart ska du åka?" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-lg" />
+                                    <input name="b" id="to" type="text" placeholder="Vart ska du åka?" ng-model="to" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-lg" />
                                     <span class="input-group-btn">
                         <button class="btn btn-info btn-lg" type="button">
                             <i class="glyphicon glyphicon-search"></i>
