@@ -3,7 +3,6 @@ package com.academy;
 import com.github.goober.coordinatetransformation.positions.RT90Position;
 import com.github.goober.coordinatetransformation.positions.WGS84Position;
 
-import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
