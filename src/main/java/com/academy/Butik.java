@@ -27,7 +27,7 @@ public class Butik implements Comparable{
     }
 
     public String getDistance() {
-        Integer i = (int) (distance*100.0);
+        Integer i = (int) (distance*1000.0);
         return String.format("%d m bort", i);
     }
 
