@@ -32,9 +32,6 @@ public class Butik implements Comparable{
     }
 
     public void setDistance(double distance) {
-        BigDecimal bd = new BigDecimal(distance);
-        bd = bd.setScale(1, RoundingMode.HALF_UP);
-        String s = String.valueOf(bd.doubleValue()) + " km away.";
         this.distance = distance;
     }
 
@@ -45,8 +42,8 @@ public class Butik implements Comparable{
     public void setPoint(double pointX, double pointY) {
         RT90Position rt90Position = new RT90Position(pointX, pointY);
         WGS84Position wgs84Position = rt90Position.toWGS84();
-        Point point = new Point(wgs84Position.getLatitude(), wgs84Position.getLongitude());
-        this.point = point;
+        this.point = new Point(wgs84Position.getLatitude(), wgs84Position.getLongitude());
+        
     }
 
     public String getName() {

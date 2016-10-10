@@ -87,7 +87,6 @@ public class reseplanerare_API {
 
         // Convert JSON to Java Object
         JsonObject json = gson.fromJson(s, JsonObject.class);
-        System.out.println(json.toString());
         JsonObject tripList = json.getAsJsonObject("TripList");
         JsonObject trip = tripList.getAsJsonObject("Trip");
         rp.duration = trip.getAsJsonPrimitive("dur").getAsInt();
