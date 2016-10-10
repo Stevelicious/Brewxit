@@ -21,7 +21,7 @@ body {
 }
 
 .navbar-default {
-    opacity: 0.5;
+    opacity: 0.7;
     font-family: "bebas-neue", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -30,4 +30,12 @@ body {
 .navbar-default .navbar-nav > li > a {
     color: black;
     /*Change active text color here*/
+    font-size: 17px;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: black;
+    font-size: 25px;
 }

@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +16,7 @@ public class SearchController {
     MapPointRepository mpr = new MapPointRepository();
 
     @GetMapping("/")
-//b02399a9327052084960d14e1fe0f5427305f17d
+
     public ModelAndView search() {
         return new ModelAndView("Search")
                 .addObject("");
@@ -36,14 +35,14 @@ public class SearchController {
             return new ModelAndView("notfound");
 
         }
-
+        int amountOfStores = 3;
+        originStores = originStores.subList(0,Math.min(originStores.size(),amountOfStores));
+        destinationStores = destinationStores.subList(0,Math.min(destinationStores.size(),amountOfStores));
         mpr.setMaps(new PlottingData(reseplan, originStores, destinationStores).returnMap());
 
         return new ModelAndView("/results")
                 .addObject("originStores", originStores)
                 .addObject("destinationStores", destinationStores);
-
-
     }
 
     @CrossOrigin//(origins = "http://localhost:8080")
