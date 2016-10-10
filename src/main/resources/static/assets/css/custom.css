@@ -101,7 +101,7 @@ body {
     font-size: 14px;
 }
 .headwrap-background {
-
+    justify-content: center;
     width: 960px;
     height: 450px;
 
