@@ -1,7 +1,6 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-
     <title>Welcome!</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -15,6 +14,7 @@
 
 </head>
 <body>
+
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -28,7 +28,7 @@
         </div>
         <div class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Start</a></li>
+                <li class="active"><a href="#">START</a></li>
                 <li class="hover"><a href="#">KONTAKT</a></li>
 
                 <li><a href="#">OM</a></li>
@@ -48,38 +48,43 @@
 
 <!--/.content-middle -->
 
-<!-- Dynamic Search form -->.
-<div class="container">
+<!-- Dynamic Search form -->
+<div class="headwrap-background">
+    <div class="resultwrap">
+
+        <div class="resultwrap-left">
+            <h4 class="results-h3" th:text="'Närmsta bolag från ' + ${reseplan.originName}"></h4>  <!--<th:text="${reseplan.origin.namn}"/-->
+            <ul class="listfont" style="list-style: none;">
+                <li th:each="butik1 : ${originStores}">
+                    <p> <a class="butik" th:text="${butik1.name}"/> <a class="distans" th:text="${butik1.distance}" /></p>
+                    <p>Adress: <a class="adress" th:text="${butik1.address}"/></p>
+                    <p>Tele:  <a class="tele" th:text="${butik1.telefon}"/></p>
+                    <p><hr /></p>
+                </li>
+            </ul>
+        </div>
 
 
+
+        <div class="resultwrap-right">
+            <h4 class="results-h3" th:text="'Närmsta bolag från ' + ${reseplan.destinationName}"></h4>
+            <ul style="list-style: none;">
+                <li th:each="butik2 : ${destinationStores}">
+                    <p><a class="butik" th:text="${butik2.name}" />  <a class="adress" th:text="${butik2.distance}" /></p>
+                    <p>Adress: <a class="adress" th:text="${butik2.address}" /></p>
+                    <p>Tele: <a class="tele" th:text="${butik2.telefon}" /></p>
+                    <p><hr /></p>
+                </li>
+            </ul>
+        </div>
+    </div></div>
+
+
+<div class="mapclass">
+    <div id="map"></div>
 </div>
-<h3>Systembolaget stores near origin:</h3>
-
-<div id="sidebar">
-<ul style="list-style: none;">
-    <li th:each="butik1 : ${originStores}">
-        <a th:text="${butik1.name}" />
-        <a th:text="${butik1.address}" />
-        <a th:text="${butik1.distance}" />
-    </li>
-</ul>
-
-<h3>Systembolaget stores near destination:</h3>
-<ul style="list-style: none;">
-    <li th:each="butik2 : ${destinationStores}">
-        <a th:text="${butik2.name}" />
-        <a th:text="${butik2.address}" />
-        <a th:text="${butik2.distance}" />
-    </li>
-</ul>
-</div>
-
-<div id="map"></div>
-
 
 <a href="/">Make a new search</a>
-
-
 <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>

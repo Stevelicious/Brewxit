@@ -22,7 +22,7 @@ public class SearchController {
                 .addObject("");
     }
 
-    @RequestMapping(path = "travel", method = RequestMethod.POST)
+    @RequestMapping(path = "results", method = RequestMethod.POST)
     public ModelAndView showResult(@RequestParam String a, String b) {
 
         Matching match = new Matching();

@@ -1,6 +1,5 @@
 package com.academy;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +18,14 @@ public class Reseplan {
 	}
 	public Point getDestination(){
 		return new Point(trips.get(trips.size()-1).destination.lat, trips.get(trips.size()-1).destination.lon);
+	}
+
+	public String getOriginName(){
+		return trips.get(0).origin.name;
+	}
+
+	public String getDestinationName(){
+		return trips.get(trips.size()-1).destination.name;
 	}
 }
 

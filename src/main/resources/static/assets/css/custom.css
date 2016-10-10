@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+
 body {
     margin: 0;
     background: url("https://raw.githubusercontent.com/Stevelicious/Brewxit/master/src/main/resources/static/assets/img/bg.jpg") no-repeat center center fixed;
@@ -5,9 +8,30 @@ body {
 }
 
 .headwrap {
-    position: fixed;
-    top: 50%;
-    left: 30%;
+    position: relative;
+    display: block;
+    margin : 20px;
+    top: 40%;
+
+}
+.resultwrap {
+    position: relative;
+    display: block;
+    margin : 5%;
+    flex-direction: row
+}
+.resultwrap-left {
+
+    margin : 1%;
+    top: 2px;
+    float: left;
+
+}
+.resultwrap-right {
+    margin: 1%;
+    top: 2px;
+    float: right;
+
 }
 
 .input-group.input-group-unstyled input.form-control {
@@ -22,11 +46,16 @@ body {
 
 .navbar-default {
     opacity: 0.7;
-    font-family: "bebas-neue", sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+
 }
 
+.results-h3 {
+    color: black;
+
+}
 .navbar-default .navbar-nav > li > a {
     color: black;
     /*Change active text color here*/
@@ -38,4 +67,66 @@ body {
 .navbar-default .navbar-brand:focus {
     color: black;
     font-size: 25px;
+}
+
+.butik  {
+    color: Black;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+.listfont {
+
+}
+
+.adress {
+    color: Black;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.tele {
+    color: Black;
+    font-family: 'Lato', sans-serif;
+    font-weight: regular;
+    font-size: 14px;
+}
+
+.distans{
+    color: Black;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.headwrap-background {
+
+    width: 960px;
+    height: 450px;
+
+    position:  absolute;
+    top : 70px;
+    left: 300px;
+
+    background-color:rgba(5,18,48,.2);
+}
+.mapclass {
+    position: relative;
+    left: 300px;
+    margin-top: 500px;
+    width: 960px;
+    height: 450px;
+
+}
+
+
+#map { height: 100%;  order:+1; }
+#sidebar{height: 100%;}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }

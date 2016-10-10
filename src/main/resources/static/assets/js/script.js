@@ -1,6 +1,6 @@
 var routepoints;
 
-$(window).load(function () {
+$(document).ready(function () {
     $.ajax({
         url: 'http://localhost:8080/getDirections',
         dataType: 'json'
@@ -12,7 +12,7 @@ $(window).load(function () {
 
 function initMap() {
     var myOptions = {
-            zoom: 15,
+            zoom: 25,
             center: new google.maps.LatLng(59.334591, 18.063240)
         },
         map = new google.maps.Map(document.getElementById('map'), myOptions),

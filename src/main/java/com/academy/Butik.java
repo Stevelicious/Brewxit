@@ -5,7 +5,6 @@ import com.github.goober.coordinatetransformation.positions.WGS84Position;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Objects;
 
 /**
  * Created by clockmice
@@ -28,7 +27,8 @@ public class Butik implements Comparable{
     }
 
     public String getDistance() {
-        return String.format("%.2f km away",distance);
+        Integer i = (int) (distance*100.0);
+        return String.format("%d m bort", i);
     }
 
     public void setDistance(double distance) {
