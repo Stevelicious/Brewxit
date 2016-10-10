@@ -22,14 +22,12 @@ public class reseplanerare_API {
             );
             String json = getJSONString(url);
             Station start = parseStation(json);
-            System.out.println(start.name);
 
             url = new URL(
                     String.format("http://api.sl.se/api2/typeahead.json?key=54f8669daa794e5fb749396bd0763e82&searchstring=%s&stationsonly=true&maxresults=1", dest)
             );
             json = getJSONString(url);
             Station destination = parseStation(json);
-            System.out.println(destination.name);
 
             return fetchTravelPlan(start.siteId, destination.siteId);
 
@@ -56,7 +54,6 @@ public class reseplanerare_API {
             );
 
             String json = getJSONString(url);
-            System.out.println(json);
 
             return parseReseplan(json);
 
@@ -114,7 +111,7 @@ public class reseplanerare_API {
 
             if (leg.getAsJsonPrimitive("hide") == null) {
                 JsonObject journeyDetailRef = leg.getAsJsonObject("JourneyDetailRef");
-                rp.journeyDetailRef = journeyDetailRef.getAsJsonPrimitive("ref").getAsString();
+//                rp.journeyDetailRef = journeyDetailRef.getAsJsonPrimitive("ref").getAsString();
 
                 legTrip = new Trip();
                 legTrip.origin = gson.fromJson(leg.get("Origin"), Place.class);
