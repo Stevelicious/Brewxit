@@ -1,58 +1,67 @@
-var newlist;
+var routepoints;
 
-$(document).ready(function() {
+$(window).load(function () {
     $.ajax({
         url: 'http://localhost:8080/getDirections',
         dataType: 'json'
-    }).then(function(data) {
-        console.log(data);
-    });
-
+    }).then(function (data) {
+        routepoints = data;
+        initMap();
+    })
 });
 
 function initMap() {
-    var pointA = new google.maps.LatLng(59.310711, 18.022928),
-        pointB = new google.maps.LatLng(59.409644, 17.961620),
-        myOptions = {
-            zoom: 7,
-            center: pointA
+    var myOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(59.334591, 18.063240)
         },
         map = new google.maps.Map(document.getElementById('map'), myOptions),
+
         // Instantiate a directions service.
         directionsService = new google.maps.DirectionsService,
         directionsDisplay = new google.maps.DirectionsRenderer({
             map: map
-        }),
-        markerA = new google.maps.Marker({
-            position: pointA,
-            title: "point A",
-            label: "A",
+        })
+
+    for (var i = 0; i < routepoints.length; i++) {
+        new google.maps.Marker({
+            position: new google.maps.LatLng(routepoints[i].point.coordinateX
+                , routepoints[i].point.coordinateY),
+            title: routepoints[i].name,
+            label: "Have a Brew",
             map: map
-        }),
-        markerB = new google.maps.Marker({
-            position: pointB,
-            title: "point B",
-            label: "B",
-            map: map
+
         });
 
-    // get route from A to B
-    calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+        calculateAndDisplayRoute(directionsService, directionsDisplay, routepoints);
+    }
+};
 
-}
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
-    directionsService.route({
-        origin: pointA,
-        destination: pointB,
-        travelMode: google.maps.TravelMode.TRANSIT
-    }, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        } else {
-            window.alert('Directions request failed due to ' + status);
-        }
-    });
-}
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, routepoints) {
+        var pointA,
+            pointB;
 
-initMap();
+        for (var i = 0; i < routepoints.length; i++)
+            if(routepoints[i].name === "start"){
+                pointA = new google.maps.LatLng(routepoints[i].point.coordinateX
+                    , routepoints[i].point.coordinateY)
+            }else if(routepoints[i].name === "destination") {
+                pointB = new google.maps.LatLng(routepoints[i].point.coordinateX
+                    , routepoints[i].point.coordinateY)
+            };
+
+        directionsService.route({
+            origin: pointA,
+            destination: pointB,
+            travelMode: google.maps.TravelMode.TRANSIT
+
+        }, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+

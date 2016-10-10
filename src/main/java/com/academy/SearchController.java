@@ -14,11 +14,7 @@ import java.util.List;
 @Controller
 public class SearchController {
 
-
-    private List<Butik> originStores;
-    private List<Butik> destinationStores;
-
-    public reseplanerare_API reseplanerare_api = new reseplanerare_API();
+    MapPointRepository mpr = new MapPointRepository();
 
     @GetMapping("/")
 //b02399a9327052084960d14e1fe0f5427305f17d
@@ -27,21 +23,34 @@ public class SearchController {
                 .addObject("");
     }
 
-    @RequestMapping(path="travel", method= RequestMethod.POST)
+    @RequestMapping(path = "travel", method = RequestMethod.POST)
     public ModelAndView showResult(@RequestParam String a, String b) {
-        Reseplan reseplan = reseplanerare_api.search(a, b);
-        Parser parser = new Parser();
-        originStores = parser.getButiks(reseplan.getOrigin());
-        destinationStores = parser.getButiks(reseplan.getDestination());
-//        parser.printButiks();
-        if((originStores.size() == 0) && (destinationStores.size() == 0)) {
+
+        Matching match = new Matching();
+
+        List<Butik> originStores = match.origin(a, b);
+        List<Butik> destinationStores = match.destination(a, b);
+        Reseplan reseplan = match.reseplan(a, b);
+
+        if ((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
+
         }
+
+        mpr.setMaps(new PlottingData(reseplan, originStores, destinationStores).returnMap());
+
         return new ModelAndView("/results")
                 .addObject("originStores", originStores)
                 .addObject("destinationStores", destinationStores);
+
+
     }
 
+    @CrossOrigin//(origins = "http://localhost:8080")
+    @RequestMapping("/getDirections")
+    public @ResponseBody List<MapPoints> places(){
 
+        return mpr.getMaps();
+    }
 
 }
