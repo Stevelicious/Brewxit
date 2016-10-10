@@ -41,6 +41,7 @@ public class SearchController {
         mpr.setMaps(new PlottingData(reseplan, originStores, destinationStores).returnMap());
 
         return new ModelAndView("/results")
+                .addObject("reseplan", reseplan)
                 .addObject("originStores", originStores)
                 .addObject("destinationStores", destinationStores);
     }
