@@ -12,11 +12,9 @@ public class PlottingData {
 
     public PlottingData(Reseplan reseplan, List<Butik> origin, List<Butik> destination) {
 
-        route.add(new MapPoints("start",
-                (new Point(reseplan.getOrigin().getCoordinateX(),reseplan.getOrigin().getCoordinateY()))));
+        route.add(new MapPoints("start", (reseplan.getOrigin())));
 
-        route.add(new MapPoints("destination",
-                (new Point(reseplan.getDestination().getCoordinateX(),reseplan.getDestination().getCoordinateY()))));
+        route.add(new MapPoints("destination", (reseplan.getDestination())));
 
         for (Butik store: destination) {
             route.add(new MapPoints(store.getAddress(), store.getPoint()));

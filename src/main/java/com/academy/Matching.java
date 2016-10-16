@@ -8,23 +8,24 @@ import java.util.List;
 public class Matching {
 
     private reseplanerare_API reseplanerare_api = new reseplanerare_API();
-    private Parser parser = new Parser();
+    private Systemet_API systemetAPI = new Systemet_API();
 
     public Reseplan reseplan (String a, String b){
         Reseplan reseplan = reseplanerare_api.search(a, b);
-
+    
         return reseplan;
     }
 
-    public List<Butik> origin (String a, String b){
+    public List<Butik> origin (Reseplan reseplan){
         List<Butik> originStores;
-        originStores = parser.getButiks(reseplan(a, b).getOrigin());
+        
+        originStores = systemetAPI.getButiks(reseplan.getOrigin());
         return originStores;
     }
 
-    public List<Butik> destination (String a, String b){
+    public List<Butik> destination (Reseplan reseplan){
         List<Butik> destinationStores;
-        destinationStores = parser.getButiks(reseplan(a, b).getDestination());
+        destinationStores = systemetAPI.getButiks(reseplan.getDestination());
         return destinationStores;
     }
 

@@ -18,11 +18,11 @@ import java.util.List;
  * Created by clockmice
  */
 
-public class Parser {
+public class Systemet_API {
     // write your code here
     List<Butik> systembolaget = new ArrayList<>();
 
-    public Parser() {
+    public Systemet_API() {
 
         try {
 
@@ -92,7 +92,10 @@ public class Parser {
                 butiks.add(butik);
             }
         }
+//      Show 3 nearest stores
         Collections.sort(butiks);
+        int amountOfStores = 3;
+        butiks = butiks.subList(0,Math.min(butiks.size(),amountOfStores));
         return butiks;
     }
 

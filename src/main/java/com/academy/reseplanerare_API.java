@@ -17,12 +17,14 @@ public class reseplanerare_API {
 
     public Reseplan search(String origin, String dest) {
         try {
+//          Get origin data
             URL url = new URL(
                     String.format("http://api.sl.se/api2/typeahead.json?key=54f8669daa794e5fb749396bd0763e82&searchstring=%s&stationsonly=true&maxresults=1", origin)
             );
             String json = getJSONString(url);
             Station start = parseStation(json);
 
+//          Get destination data
             url = new URL(
                     String.format("http://api.sl.se/api2/typeahead.json?key=54f8669daa794e5fb749396bd0763e82&searchstring=%s&stationsonly=true&maxresults=1", dest)
             );

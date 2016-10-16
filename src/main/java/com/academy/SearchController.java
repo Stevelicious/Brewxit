@@ -26,18 +26,16 @@ public class SearchController {
     public ModelAndView showResult(@RequestParam String a, String b) {
 
         Matching match = new Matching();
-
-        List<Butik> originStores = match.origin(a, b);
-        List<Butik> destinationStores = match.destination(a, b);
         Reseplan reseplan = match.reseplan(a, b);
+        
+        List<Butik> originStores = match.origin(reseplan);
+        List<Butik> destinationStores = match.destination(reseplan);
+        
 
         if ((originStores.size() == 0) && (destinationStores.size() == 0)) {
             return new ModelAndView("notfound");
-
         }
-        int amountOfStores = 3;
-        originStores = originStores.subList(0,Math.min(originStores.size(),amountOfStores));
-        destinationStores = destinationStores.subList(0,Math.min(destinationStores.size(),amountOfStores));
+
         mpr.setMaps(new PlottingData(reseplan, originStores, destinationStores).returnMap());
 
         return new ModelAndView("/results")
